@@ -17,7 +17,7 @@ type Pool interface {
 
 	// Close cleans up pool data and cancels any pending work still not committed
 	// to processing. Call Reset() to reinitialize the pool for use.
-	Close()
+	Close() error
 
 	// Batch creates a new Batch object for queueing Work Units separate from any
 	// others that may be running on the pool. Grouping these Work Units together

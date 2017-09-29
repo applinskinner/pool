@@ -183,7 +183,7 @@ func (p *limitedPool) Cancel() {
 // Close cleans up the pool workers and channels and cancels any pending
 // work still yet to be processed.
 // call Reset() to reinitialize the pool for use.
-func (p *limitedPool) Close() {
+func (p *limitedPool) Close() error {
 
 	err := &ErrPoolClosed{s: errClosed}
 	p.closeWithError(err)
