@@ -151,6 +151,7 @@ func (p *unlimitedPool) Close() error {
 
 	err := &ErrPoolClosed{s: errClosed}
 	p.closeWithError(err)
+	return nil
 }
 
 // Batch creates a new Batch object for queueing Work Units separate from any others
